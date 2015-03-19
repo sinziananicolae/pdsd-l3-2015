@@ -2,6 +2,7 @@ package ro.pub.cs.systems.pdsd.lab03.phonedialer;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -77,6 +78,8 @@ public class PhoneDialerActivity extends Activity {
 	protected void onCreate(Bundle state) {
 		super.onCreate(state);
 		setContentView(R.layout.activity_phone_dialer);
+		// BLOCK View to portrait: setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		
 		for (int k = 0; k < buttonIds.length; k++) {
 			Button button = (Button) findViewById(buttonIds[k]);
 			button.setOnClickListener(buttonListener);
