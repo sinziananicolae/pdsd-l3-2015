@@ -100,18 +100,31 @@
             android:text="@string/ButtonDiez" />
         
          <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_column="0"
-            android:layout_row="5"
-            android:src="@drawable/call"
-            android:contentDescription="@string/imageButton2" />
+             android:id="@+id/imageButton2"
+             android:layout_width="61dp"
+             android:layout_height="wrap_content"
+             android:layout_column="0"
+             android:layout_gravity="fill_vertical"
+             android:layout_row="5"
+             android:contentDescription="@string/imageButton2"
+             android:src="@drawable/call" />
+         
+         <ImageButton
+             android:id="@+id/imageButton4"
+             android:layout_width="58dp"
+             android:layout_height="55dp"
+             android:layout_column="1"
+             android:layout_row="5"
+             android:contentDescription="@string/imageButton4"
+             android:scaleType="fitCenter"
+             android:src="@drawable/contacts" />
          
           <ImageButton
               android:id="@+id/imageButton3"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_column="2"
-              android:layout_gravity="left|top"
+              android:layout_gravity="left|fill_vertical"
               android:layout_row="5"
               android:contentDescription="@string/imageButton3"
               android:src="@drawable/hangup" />

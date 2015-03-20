@@ -2,7 +2,6 @@ package ro.pub.cs.systems.pdsd.lab03.phonedialer;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class PhoneDialerActivity extends Activity {
 
@@ -19,7 +19,9 @@ public class PhoneDialerActivity extends Activity {
 			R.id.ButtonStar, R.id.ButtonDiez };
 
 	final protected int[] imageButtonIds = { R.id.imageButton1,
-			R.id.imageButton2, R.id.imageButton3 };
+			R.id.imageButton2, R.id.imageButton3, R.id.imageButton4 };
+	
+	static final int CONTACTS_MANAGER_REQUEST_CODE = 99;
 
 	protected MyButtonListener buttonListener = new MyButtonListener();
 	protected MyImageButtonListener imageButtonListener = new MyImageButtonListener();
@@ -68,6 +70,18 @@ public class PhoneDialerActivity extends Activity {
 					Log.d("mytag", "am apasat hangup");
 					finish();
 					break;
+				
+				case R.id.imageButton4:
+					Log.d("mytag", "am apasat contacts " + phoneNb);
+					if (phoneNb.length() > 0) {
+						  Intent intent = new Intent("ro.pub.cs.systems.pdsd.lab04.contactsmanager.intent.action.ContactsManagerActivity");
+						  intent.putExtra("ro.pub.cs.systems.pdsd.lab04.contactsmanager.PHONE_NUMBER_KEY", phoneNb);
+						  startActivityForResult(intent, CONTACTS_MANAGER_REQUEST_CODE);
+						} else {
+						  Toast.makeText(getApplication(), getResources().getString(R.string.phone_error), Toast.LENGTH_LONG).show();
+						}
+					break;
+					
 				}
 			}
 		}

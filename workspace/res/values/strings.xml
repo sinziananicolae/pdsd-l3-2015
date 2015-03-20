@@ -6,6 +6,7 @@
     <string name="imageButton1">Back Button</string>
     <string name="imageButton2">Dial Button</string>
     <string name="imageButton3">Hang up Button</string>
+    <string name="imageButton4">Contacts Button</string>
     <string name="Button0">0</string>
     <string name="Button1">1</string>
     <string name="Button2">2</string>
@@ -18,5 +19,6 @@
     <string name="Button9">9</string>
     <string name="ButtonStar">*</string>
     <string name="ButtonDiez">#</string>
+    <string name="phone_error">Phone Number Error</string>
 
 </resources>
